@@ -1,0 +1,73 @@
+<ng-container *ngIf="!confirmation">
+  <div class="modal-container">
+    <div class="modal-header">
+      <p class="ml-20 font-l">Change Configuration</p>
+      <img src="/assets/images/icons/icon-close.svg" class="icons-xs mr-30 cp" (click)="closeModal(configData)"
+        alt=" close ">
+    </div>
+    <div class="info-container p-20">
+      <div class="info-data pl-10">
+        <div class="head">
+          <div class="name">
+            <input type="checkbox" class="ml-10" />
+            <div class="pl-10 font-m font-bold">
+              System Name
+            </div>
+          </div>
+          <div class="session font-m font-bold" (click)="editJobs()">
+            Max job
+            <img src="/assets/images/icons/edit-black.svg" class="icons-s ml-5" alt=" profile ">
+          </div>
+          <div class="session font-m font-bold" (click)="editThread()">
+            Max Thread
+            <img src="/assets/images/icons/edit-black.svg" class="icons-s ml-5" alt=" profile ">
+          </div>
+        </div>
+      </div>
+      <ng-container *ngFor="let list of configData.data">
+        <div class="info-data data-list ml-10 mr-10 p-10">
+          <div class="name ml-30">
+            {{list.name}}
+          </div>
+          <div class="session font-m ml-5">
+            <input *ngIf="jobEdit" class="p-5" [(ngModel)]="list.max_job" />
+            <div *ngIf="!jobEdit">
+              {{list.max_job}}
+            </div>
+          </div>
+          <div class="session font-m ml-5">
+            <input *ngIf="threadEdit" class="p-5" [(ngModel)]="list.max_thread" />
+            <div *ngIf="!threadEdit">
+              {{list.max_thread}}
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <div class="cancel-yes-container mt-20 mb-20">
+        <button class="cancel-btn cp" (click)="closeModal('true')">Cancel</button>
+        <button class="yes-btn cp ml-10" (click)="openConfirmation()">Yes</button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="confirmation">
+  <div class="confirmation">
+    <div class="confirmation-header">
+      <div class="confirmation-header-left">
+        <img src="/assets/images/icons/info-red.svg" class="icons-s ml-15 mr-5 cp" (click)="closeModal('true')"
+          alt=" alert ">
+        <p>Restart</p>
+      </div>
+      <img src="/assets/images/icons/icon-close.svg" class="icons-xs mr-15 cp" (click)="closeModal('true')"
+        alt=" close ">
+    </div>
+    <p class="confirmation-message pt-30 pb-10">Do you want to restart the
+      <br>
+      <b>JBoss server</b></p>
+    <div class="cancel-yes-container mt-20 mb-30">
+      <button class="cancel-btn cp" (click)="closeModal('true')">Cancel</button>
+      <button class="yes-btn cp ml-10 pl-10 pr-10" (click)="closeModal(configData)">Yes, Please</button>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,35 @@
+$sizes: 2,
+3,
+5,
+10,
+15,
+20,
+25,
+30,
+35,
+40,
+45,
+50,
+55,
+60,
+70,
+80,
+90,
+100;
+@each $size in $sizes {
+    .p-#{$size} {
+        padding: #{$size}px !important;
+    }
+    .pt-#{$size} {
+        padding-top: #{$size}px !important;
+    }
+    .pr-#{$size} {
+        padding-right: #{$size}px !important;
+    }
+    .pl-#{$size} {
+        padding-left: #{$size}px !important;
+    }
+    .pb-#{$size} {
+        padding-bottom: #{$size}px !important;
+    }
+}

@@ -1,0 +1,77 @@
+<div class="info-container mt-10">
+    <div class=" info-data pl-10 head">
+        <div class="activity pl-20 font-m font-bold">
+            Activity Timeline
+        </div>
+        <div class="updated-on font-m font-bold">
+            Updated On ↕
+        </div>
+        <div class="updated-by font-m font-bold">
+            Updated By ↕
+        </div>
+    </div>
+    <!-- <ng-container *ngFor="let list of filteredData let i = index"> -->
+    <div class="info-data">
+        <div class="filter-row">
+            <div class="filter-box ml-10 filter-one">
+                <input type="text" placeholder="Filter.." name="filter">
+                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt="" class="icons-xs ">
+            </div>
+            <div class="filter-box filter-two">
+                <input type="text" placeholder="Filter.." name="filter">
+                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt="" class="icons-xs ">
+            </div>
+            <div class="filter-box mr-40 filter-three">
+                <input type="text" placeholder="Filter.." name="filter">
+                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt="" class="icons-xs ">
+            </div>
+        </div>
+        <!-- <div class="activity ">
+            <div class="pl-20 font-m ">{{list.activity}}</div>
+        </div> -->
+        <!-- <div class="updated-on font-m ml-10 ">
+            <div class="session-count " (click)="getList(i) ">
+                <div>
+                    {{list.sessions}}
+                </div>
+            </div>
+            <div class="sessions-name " *ngIf="showList && i===s electedIndex ">
+                <app-sessions [data]="list "></app-sessions>
+            </div>
+        </div>
+        <div class="updated-by font-m ">
+            <app-updated-by [data]="list "></app-updated-by>
+        </div> -->
+    </div>
+    <!-- </ng-container> -->
+
+    <ng-container>
+        <div class="page-container">
+            <div class="pt-5 pb-5 page-content">
+                <div class="pagination-left pl-20 pb-5 pt-5 font-s">
+                    Viewing 07 of 200 Records
+                </div>
+                <div class="pagination-right font-s mr-30">
+                    <div class="pb-5 pt-5">
+                        <img src="/assets/images/icons/skip_first.svg" alt="" class="icons-xs">
+                    </div>
+                    <div class="pb-5 pt-5">
+                        <img src="/assets/images/icons/skip_previous.svg" alt="" class="icons-xs mr-10 ml-10">
+                    </div>
+                    <div class="page-details">
+                        <p>Page</p>
+                        <input type="text" class="page-number ml-5 mr-5 p-5" size="6" value="1">
+                        <p>of 76</p>
+                    </div>
+                    <div class="pb-5 pt-5">
+                        <img src="/assets/images/icons/skip_next.svg" alt="" class="icons-xs mr-10 ml-10">
+                    </div>
+                    <div class="pb-5 pt-5">
+                        <img src="/assets/images/icons/skip_last.svg" alt="" class="icons-xs">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,27 @@
+.confirmation{
+    width: 400px;
+    .confirmation-header{
+        width: 100%;
+        background: #dfe2ee 0% 0% no-repeat padding-box;
+        border-radius: 4px 4px 0px 0px;
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+        .confirmation-header-left{
+            display: flex;
+            justify-content: left;
+            align-items: center !important;
+        }
+    }
+    .confirmation-message{
+       text-align: center;
+    }
+    .cancel-yes-container {
+        display: flex;
+        justify-content: center;
+        .yes-btn{
+            width: auto;
+        }
+    }
+}

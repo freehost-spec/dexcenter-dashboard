@@ -1,0 +1,18 @@
+<div>
+  <button class="primary-btn" (click)="changeNav('user')"
+    [ngClass]="activatedTab === 'user' ? 'selected' : ''">user</button>
+  <button class="primary-btn" (click)="changeNav('sessions')"
+    [ngClass]="activatedTab === 'sessions' ? 'selected' : ''">session</button>
+  <button class="primary-btn" (click)="changeNav('report')"
+    [ngClass]="activatedTab === 'report' ? 'selected' : ''">report</button>
+</div>
+
+<ng-container *ngIf="activatedTab === 'user'">
+  <app-user></app-user>
+</ng-container>
+<ng-container *ngIf="activatedTab === 'sessions'">
+  <app-sessions></app-sessions>
+</ng-container>
+<ng-container *ngIf="activatedTab === 'report'">
+  <app-reports></app-reports>
+</ng-container>

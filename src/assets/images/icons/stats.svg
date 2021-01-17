@@ -1,0 +1,4 @@
+<svg id="stats" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <path id="Path_1090" data-name="Path 1090" d="M0,0H16V16H0Z" fill="none"/>
+  <path id="Path_1091" data-name="Path 1091" d="M14.333,3h-12A1.337,1.337,0,0,0,1,4.333v8a1.337,1.337,0,0,0,1.333,1.333H5.667V15H11V13.667h3.333a1.332,1.332,0,0,0,1.327-1.333l.007-8A1.337,1.337,0,0,0,14.333,3Zm0,9.333h-12v-8h12ZM13,6.333H5.667V7.667H13ZM13,9H5.667v1.333H13ZM5,6.333H3.667V7.667H5ZM5,9H3.667v1.333H5Z" transform="translate(-0.333 -1)" fill="#fff"/>
+</svg>

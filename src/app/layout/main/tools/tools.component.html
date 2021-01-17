@@ -1,0 +1,32 @@
+<div class="tools-section mb-20">
+  <div class="page-title font-xl fw-500 mb-30">
+    My Tools
+  </div>
+  <div class="selected-tools">
+    <ng-container *ngFor="let item of selectedTools; let i = index">
+      <div class="tools">
+        {{item.name}}
+      </div>
+    </ng-container>
+  </div>
+  <div class="all-tools">
+    <div class="tool-head cp" (click)="closeTools()">
+      <img [ngClass]="closeToolSec ? 'tool-icon-close' : 'tool-icon'" class="" src="/assets/images/icons/close.svg">
+      <span class="pl-10">
+        Tools
+      </span>
+    </div>
+    <div class="list" *ngIf="!closeToolSec">
+      <ng-container *ngFor="let item of tools; let i = index">
+        <div class="tool p-10">
+          <label class="switch">
+            <input type="checkbox" [(ngModel)]="item.selected" [ngModelOptions]="{standalone: true}"
+              (change)="selectTool(item)">
+            <span class="slider round"></span>
+          </label>
+          <div class="pl-10 pr-10">{{item.name}}</div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

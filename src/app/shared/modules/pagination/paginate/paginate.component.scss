@@ -1,0 +1,47 @@
+.pagination {
+  width: 100%;
+  text-align: right;
+  padding: 20px 0 80px 0;
+
+  .page-label {
+    color: #444;
+    margin-right: 50px;
+  }
+
+  .page-button {
+    border-color: transparent;
+    min-width: 20px !important;
+  }
+
+  .navigation-arrow {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 3px;
+  }
+}
+
+.mat-pagination {
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .page-label {
+    color: #444;
+    padding-left: 10px;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .page-button {
+    border-color: transparent;
+    min-width: 20px !important;
+  }
+
+  .navigation-arrow {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 3px;
+  }
+}

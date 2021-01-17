@@ -1,0 +1,50 @@
+<!--Collapse Nav Bar -->
+<div class="side-nav" *ngIf="!showNav">
+  <img src="/assets/images/icons/close.svg" alt=" Home" class="nav-icon open-nav cp" (click)="openNav()">
+</div>
+
+<!--Expand-Nav Bar -->
+<div class="side-nav side-nav-expand font-m" *ngIf="showNav">
+  <div class="left-collaps-icon">
+    <img src="/assets/images/icons/close.svg" alt="" class="nav-icon close-nav cp" (click)="openNav()">
+  </div>
+  <div class="fav-tool-container mt-10 pl-20">
+    <p><b>Favorite Tool</b></p>
+    <ng-container *ngFor="let item of fabList">
+      <div class="nav-list mt-10">
+        <img src="/assets/images/icons/star.jpg" alt="" class="icons-xxs mr-5">
+        <div>{{item.name}}</div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="pl-20 pr-20 mt-20">
+    <hr>
+  </div>
+  <div class="admin-container mt-20 pl-20">
+    <p><b>Administration</b></p>
+    <div class="nav-list mt-5">
+      <ng-container *ngFor="let item of navList">
+        <div class="p-5 ml-10 cp" (click)="goToPage(item.route)">{{item.name}}</div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="pl-20 pr-20 mt-20">
+    <hr>
+  </div>
+  <div class="help-container mt-20 pl-20">
+    <p><b>Help</b></p>
+    <div class="nav-list mt-5">
+      <div class="p-5 ml-10">Documents</div>
+      <div class="p-5 ml-10">About</div>
+      <div class="p-5 ml-10">Support</div>
+    </div>
+    <div class="help-container mt-10 pl-20">
+      <p><b>Help</b></p>
+      <div class="nav-list mt-5">
+        <div class="mt-5 ml-10">Documents</div>
+        <div class="mt-5 ml-10">About</div>
+        <div class="mt-5 ml-10">Support</div>
+      </div>
+
+    </div>
+  </div>

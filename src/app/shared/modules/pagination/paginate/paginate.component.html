@@ -1,0 +1,23 @@
+<ng-container *ngIf="data && data?.total_pages > 0 ">
+  <div class="pagination">
+    <span class="page-label">Page {{ data?.current_page }} of {{ data?.total_pages }}</span>
+    <span class="page-button-holder">
+      <button class="mr-10" [disabled]="!!data && data?.current_page === 1"
+        (click)="pageChange(data?.current_page - 1)">
+        <span class="navigation-arrow">&lt;</span>
+        <span class="navigation-label">Previous</span>
+      </button>
+      <span *ngFor="let i of pages">
+        <button [disabled]="isNaN(i)" class="page-button mr-5" *ngIf="i != data?.current_page" (click)="pageChange(i)"
+          data]="{page: i}">{{ i }}</button>
+        <button [disabled]="isNaN(i)" class="page-button mr-5" *ngIf="i == data?.current_page" (click)="pageChange(i)"
+          color="primary">{{ i }}</button>
+      </span>
+      <button class="ml-5" [disabled]="!!data && data?.current_page === data.total_pages"
+        (click)="pageChange(data?.current_page + 1)">
+        <span class="navigation-label">Next</span>
+        <span class="navigation-arrow">&gt;</span>
+      </button>
+    </span>
+  </div>
+</ng-container>

@@ -1,0 +1,12 @@
+<ng-container *ngIf="data">
+  <div class="progress-circle p{{data?.summary}}"
+    [ngClass]="data.status === 'failed' ? 'failed' : data.status === 'completed' ? 'completed' : 'circle-color'">
+    <span>{{data?.summary}}%</span>
+    <div class="left-half-clipper">
+      <div class="first50-bar"></div>
+      <div class="value-bar"
+        [ngClass]="data.status === 'failed' ? 'value-failed' : data.status === 'completed' ? 'value-completed' : 'value-color'">
+      </div>
+    </div>
+  </div>
+</ng-container>
