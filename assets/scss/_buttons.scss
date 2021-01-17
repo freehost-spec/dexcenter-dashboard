@@ -1,0 +1,40 @@
+@mixin button-default {
+  min-height: 30px;
+  min-width: 100px;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #00a1d8;
+}
+
+.primary-btn {
+  @include button-default;
+  border: 1px solid #35aff8;
+}
+
+@mixin cancel-yes-default {
+  width: 70px;
+  height: 35px;
+  border: 1px solid #35aff8;
+  border-radius: 2px;
+}
+.cancel-btn {
+  @include cancel-yes-default;
+  color: #35aff8;
+  background-color: white;
+}
+.yes-btn {
+  @include cancel-yes-default;
+  color: white;
+  background-color: #35aff8;
+}
+
+.session-btn {
+  background: #35aff8 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  border: none;
+  letter-spacing: 0px;
+  color: #ffffff;
+}

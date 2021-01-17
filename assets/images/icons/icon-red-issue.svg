@@ -1,0 +1,5 @@
+<svg id="icon-red-issue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_399" data-name="Path 399" d="M0,0H24V24H0Z" fill="none"/>
+  <circle id="Ellipse_401" data-name="Ellipse 401" cx="10" cy="10" r="10" transform="translate(2 2)" fill="#fd1313"/>
+  <path id="Path_400" data-name="Path 400" d="M9.589,3H8.271V9.589H9.589Zm3.183,1.43-.936.936A4.56,4.56,0,0,1,13.543,8.93,4.612,4.612,0,1,1,6.018,5.359L5.089,4.43a5.93,5.93,0,1,0,7.683,0Z" transform="translate(3.07 3.07)" fill="#fff"/>
+</svg>
