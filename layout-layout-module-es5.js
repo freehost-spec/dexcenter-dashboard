@@ -12042,7 +12042,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.subscription = this.router.events.subscribe(function (s) {
           if (s instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
-            _this41.activeUrl = s.urlAfterRedirects;
+            if (s.urlAfterRedirects.includes('queue-info')) {
+              _this41.activeUrl = '/ Queue Information';
+            } else {
+              _this41.activeUrl = '';
+            }
           }
         });
       }

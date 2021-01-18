@@ -8380,7 +8380,12 @@ let HeaderComponent = class HeaderComponent {
         // this.activeUrl = router.url;
         this.subscription = this.router.events.subscribe(s => {
             if (s instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
-                this.activeUrl = s.urlAfterRedirects;
+                if (s.urlAfterRedirects.includes('queue-info')) {
+                    this.activeUrl = '/ Queue Information';
+                }
+                else {
+                    this.activeUrl = '';
+                }
             }
         });
     }
