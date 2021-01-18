@@ -8127,7 +8127,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header\">\n    <div class=\"header-left\">\n        <a href=\"\"><img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/logo.png\"\n                alt=\"Logo\" width=\"50px\" height=\"100px\" class=\"mt-10 ml-10 logo\"></a>\n        <p class=\"companyname font-d-grey ml-10 font-xl\">DEXcenter Dashboard</p>\n        <div class=\"nav-path ml-30\">\n            <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/home.svg\" alt=\"Home\"\n                class=\"icons-xxs icon mr-5\">\n            <p class=\"home font-m\">Home /</p>\n        </div>\n    </div>\n    <div class=\"header-right\">\n        <div class=\"mr-3\">\n            <p class=\"font-d-blue font-l\">DEXcenter Administrator</p>\n            <p class=\"font-d-blue font-s\">Last login 12/01/2020 : 15:30</p>\n        </div>\n        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/account_circle-24px.svg\"\n            class=\"icons-2xl\" alt=\" profile \">\n        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg \"\n            class=\"icons-s mr-10\" alt=\"caret \">\n        <div class=\"lang mr-10\">\n            <div class=\"sl-nav\">\n                <ul>\n                    <li>\n                        <p class=\"font-m font-d-grey pl-5 pt-5\">EN</p>\n                        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/keyboard_arrow_down-24px.svg \"\n                            class=\"icons-s ml-10 mt-2\" alt=\"dropdown \">\n                        <ul>\n                            <li><i class=\"sl-flag flag-de\">\n                                    <div id=\"germany\"></div>\n                                </i> <span class=\"active\">EN</span>\n                            </li>\n                            <li><i class=\"sl-flag flag-usa\">\n                                    <div id=\"germany\"></div>\n                                </i> <span>Englisch</span>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/help_outline-24px.svg \"\n            class=\"icons-s mr-10\" alt=\"help \">\n        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/signout.svg \"\n            class=\"icons-s mr-30\" alt=\"login \">\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header\">\n  <div class=\"header-left\">\n    <a class=\"cp\" (click)=\"goToHome()\"><img\n        src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/logo.png\" alt=\"Logo\" width=\"50px\"\n        height=\"100px\" class=\"mt-10 ml-10 logo\"></a>\n    <p class=\"companyname font-d-grey ml-10 font-xl\">DEXcenter Dashboard</p>\n    <div class=\"nav-path ml-30\">\n      <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/home.svg\" alt=\"Home\"\n        class=\"icons-xxs icon mr-5\">\n      <p class=\"home font-m\"><span (click)=\"goToHome()\">Home</span> {{activeUrl}}</p>\n    </div>\n  </div>\n  <div class=\"header-right\">\n    <div class=\"mr-3\">\n      <p class=\"font-d-blue font-l\">DEXcenter Administrator</p>\n      <p class=\"font-d-blue font-s\">Last login 12/01/2020 : 15:30</p>\n    </div>\n    <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/account_circle-24px.svg\"\n      class=\"icons-2xl\" alt=\" profile \">\n    <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg \"\n      class=\"icons-s mr-10\" alt=\"caret \">\n    <div class=\"lang mr-10\">\n      <div class=\"sl-nav\">\n        <ul>\n          <li>\n            <p class=\"font-m font-d-grey pl-5 pt-5\">EN</p>\n            <img\n              src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/keyboard_arrow_down-24px.svg \"\n              class=\"icons-s ml-10 mt-2\" alt=\"dropdown \">\n            <ul>\n              <li><i class=\"sl-flag flag-de\">\n                  <div id=\"germany\"></div>\n                </i> <span class=\"active\">EN</span>\n              </li>\n              <li><i class=\"sl-flag flag-usa\">\n                  <div id=\"germany\"></div>\n                </i> <span>Englisch</span>\n              </li>\n            </ul>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/help_outline-24px.svg \"\n      class=\"icons-s mr-10\" alt=\"help \">\n    <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/signout.svg \"\n      class=\"icons-s mr-30\" alt=\"login \">\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -8369,13 +8369,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let HeaderComponent = class HeaderComponent {
-    constructor() { }
+    constructor(router) {
+        this.router = router;
+        // router.events.subscribe((url: any) => console.log(url));
+        // this.activeUrl = router.url;
+        this.subscription = this.router.events.subscribe(s => {
+            if (s instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+                this.activeUrl = s.urlAfterRedirects;
+            }
+        });
+    }
     ngOnInit() {
     }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+    goToHome() {
+        this.router.navigate(['/']);
+    }
 };
+HeaderComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-header',

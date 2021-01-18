@@ -11632,7 +11632,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"header\">\n    <div class=\"header-left\">\n        <a href=\"\"><img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/logo.png\"\n                alt=\"Logo\" width=\"50px\" height=\"100px\" class=\"mt-10 ml-10 logo\"></a>\n        <p class=\"companyname font-d-grey ml-10 font-xl\">DEXcenter Dashboard</p>\n        <div class=\"nav-path ml-30\">\n            <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/home.svg\" alt=\"Home\"\n                class=\"icons-xxs icon mr-5\">\n            <p class=\"home font-m\">Home /</p>\n        </div>\n    </div>\n    <div class=\"header-right\">\n        <div class=\"mr-3\">\n            <p class=\"font-d-blue font-l\">DEXcenter Administrator</p>\n            <p class=\"font-d-blue font-s\">Last login 12/01/2020 : 15:30</p>\n        </div>\n        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/account_circle-24px.svg\"\n            class=\"icons-2xl\" alt=\" profile \">\n        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg \"\n            class=\"icons-s mr-10\" alt=\"caret \">\n        <div class=\"lang mr-10\">\n            <div class=\"sl-nav\">\n                <ul>\n                    <li>\n                        <p class=\"font-m font-d-grey pl-5 pt-5\">EN</p>\n                        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/keyboard_arrow_down-24px.svg \"\n                            class=\"icons-s ml-10 mt-2\" alt=\"dropdown \">\n                        <ul>\n                            <li><i class=\"sl-flag flag-de\">\n                                    <div id=\"germany\"></div>\n                                </i> <span class=\"active\">EN</span>\n                            </li>\n                            <li><i class=\"sl-flag flag-usa\">\n                                    <div id=\"germany\"></div>\n                                </i> <span>Englisch</span>\n                            </li>\n                        </ul>\n                    </li>\n                </ul>\n            </div>\n        </div>\n        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/help_outline-24px.svg \"\n            class=\"icons-s mr-10\" alt=\"help \">\n        <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/signout.svg \"\n            class=\"icons-s mr-30\" alt=\"login \">\n    </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"header\">\n  <div class=\"header-left\">\n    <a class=\"cp\" (click)=\"goToHome()\"><img\n        src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/logo.png\" alt=\"Logo\" width=\"50px\"\n        height=\"100px\" class=\"mt-10 ml-10 logo\"></a>\n    <p class=\"companyname font-d-grey ml-10 font-xl\">DEXcenter Dashboard</p>\n    <div class=\"nav-path ml-30\">\n      <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/home.svg\" alt=\"Home\"\n        class=\"icons-xxs icon mr-5\">\n      <p class=\"home font-m\"><span (click)=\"goToHome()\">Home</span> {{activeUrl}}</p>\n    </div>\n  </div>\n  <div class=\"header-right\">\n    <div class=\"mr-3\">\n      <p class=\"font-d-blue font-l\">DEXcenter Administrator</p>\n      <p class=\"font-d-blue font-s\">Last login 12/01/2020 : 15:30</p>\n    </div>\n    <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/account_circle-24px.svg\"\n      class=\"icons-2xl\" alt=\" profile \">\n    <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg \"\n      class=\"icons-s mr-10\" alt=\"caret \">\n    <div class=\"lang mr-10\">\n      <div class=\"sl-nav\">\n        <ul>\n          <li>\n            <p class=\"font-m font-d-grey pl-5 pt-5\">EN</p>\n            <img\n              src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/keyboard_arrow_down-24px.svg \"\n              class=\"icons-s ml-10 mt-2\" alt=\"dropdown \">\n            <ul>\n              <li><i class=\"sl-flag flag-de\">\n                  <div id=\"germany\"></div>\n                </i> <span class=\"active\">EN</span>\n              </li>\n              <li><i class=\"sl-flag flag-usa\">\n                  <div id=\"germany\"></div>\n                </i> <span>Englisch</span>\n              </li>\n            </ul>\n          </li>\n        </ul>\n      </div>\n    </div>\n    <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/help_outline-24px.svg \"\n      class=\"icons-s mr-10\" alt=\"help \">\n    <img src=\"https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/signout.svg \"\n      class=\"icons-s mr-30\" alt=\"login \">\n  </div>\n</div>\n";
     /***/
   },
 
@@ -12024,19 +12024,52 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
 
     var HeaderComponent = /*#__PURE__*/function () {
-      function HeaderComponent() {
+      function HeaderComponent(router) {
+        var _this41 = this;
+
         _classCallCheck(this, HeaderComponent);
+
+        this.router = router; // router.events.subscribe((url: any) => console.log(url));
+        // this.activeUrl = router.url;
+
+        this.subscription = this.router.events.subscribe(function (s) {
+          if (s instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
+            _this41.activeUrl = s.urlAfterRedirects;
+          }
+        });
       }
 
       _createClass(HeaderComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          this.subscription.unsubscribe();
+        }
+      }, {
+        key: "goToHome",
+        value: function goToHome() {
+          this.router.navigate(['/']);
+        }
       }]);
 
       return HeaderComponent;
     }();
+
+    HeaderComponent.ctorParameters = function () {
+      return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }];
+    };
 
     HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-header',
@@ -12116,7 +12149,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var SideNavComponent = /*#__PURE__*/function () {
       function SideNavComponent(router, commonService) {
-        var _this41 = this;
+        var _this42 = this;
 
         _classCallCheck(this, SideNavComponent);
 
@@ -12125,9 +12158,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.fabList = [];
         this.subscription = this.commonService.getData().subscribe(function (data) {
           if (data) {
-            _this41.fabList = data.data;
+            _this42.fabList = data.data;
           } else {
-            _this41.fabList = [];
+            _this42.fabList = [];
           }
         });
       }
