@@ -1,22 +1,24 @@
 //icon size
 .icons-xxs {
-  width: 15px;
-  height: 15px;
+    width: 15px;
+    height: 15px;
 }
+
 .icons-xs {
-  width: 18px;
-  height: 18px;
+    width: 18px;
+    height: 18px;
 }
 
 .icons-s {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .icons-m {
-  width: 20px;
-  height: 10px;
+    width: 20px;
+    height: 10px;
 }
+
 // .icons-l {
 //     width: 15px;
 //     height: 15px;
@@ -26,14 +28,42 @@
 //     height: 10px;
 // }
 .icons-2xl {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .mat-dialog-container {
-  padding: 0 !important;
+    padding: 0 !important;
 }
 
 .cp {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+// filter box
+.filter-box {
+    display: flex;
+    position: relative;
+    &>input {
+        width: 100%;
+        padding: 5px 8px;
+        border: 1px solid #e3e5ea;
+    }
+    &>img {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+}
+
+// graph header background
+.graph-header {
+    background-color: #DDE1EC;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px 3px 0px 0px;
+    .graph-title {
+        color: black;
+        margin-left: 20px;
+        font-size: 16px;
+    }
 }
