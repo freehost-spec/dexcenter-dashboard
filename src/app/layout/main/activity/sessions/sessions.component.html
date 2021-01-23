@@ -1,88 +1,91 @@
-<div class="info-container mt-10">
-    <div class=" info-data pl-10 head">
-        <input type="checkbox" class="mr-10" />
-        <div class=" name font-m font-bold ">
-            Session ID ↕
+<div class="sessions-container mt-20 font-m">
+    <!-- Table header -->
+    <div class="sessions-container-rows">
+        <div class="sessions-checkbox ml-10">
+            <input type="checkbox">
         </div>
-        <div class="session font-m font-bold ">
-            Session Title ↕
+        <div class="session-id fw-500">Session ID ↕</div>
+        <div class="session-title fw-500">Session Title ↕</div>
+        <div class="recipient fw-500">Recipient Companies ↕</div>
+        <div class="sender fw-500">Sender ↕</div>
+        <div class="created-on fw-500">Created On↕</div>
+        <div class="status fw-500">Status ↕</div>
+        <div class="job-type fw-500">Job Type ↕</div>
+        <div class="originated-session fw-500">Is Originated Session</div>
+    </div>
+    <!-- Filter row -->
+    <div class="filter">
+        <div class="sessions-checkbox ml-10">
         </div>
-        <div class="recipient font-m font-bold ">
-            Recipient Companies ↕
+        <div class="session-id">
+            <div class="filter-box">
+                <input type="text " placeholder="Filter" name="filter ">
+                <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            </div>
         </div>
-        <div class="sender font-m font-bold ">
-            Sender ↕
+        <div class="session-title">
+            <div class="filter-box">
+                <input type="text " placeholder="Filter" name="filter ">
+                <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            </div>
         </div>
-        <div class="created_on font-m font-bold ">
-            Created On↕
+        <div class="recipient">
+            <div class="filter-box">
+                <input type="text " placeholder="Filter" name="filter ">
+                <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            </div>
         </div>
-        <div class="status font-m font-bold ">
-            Status ↕
+        <div class="sender">
+            <div class="filter-box">
+                <input type="text " placeholder="Filter" name="filter ">
+                <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            </div>
         </div>
-        <div class="job-type font-m font-bold ">
-            Job Type ↕
+        <div class="created-on">
+            <div class="filter-box">
+                <input type="text " placeholder="Filter" name="filter ">
+                <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            </div>
         </div>
-        <div class="originated-session font-m font-bold ">
-            Is Originated Session
+        <div class="status">
+            <div class="filter-box">
+                <input type="text " placeholder="Filter" name="filter ">
+                <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            </div>
+        </div>
+        <div class="job-type">
+            <div class="filter-box">
+                <input type="text " placeholder="Filter" name="filter ">
+                <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            </div>
+        </div>
+        <div class="originated-session">
+            <div class="filter-box">
+                <input type="text " placeholder="Filter" name="filter ">
+                <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            </div>
         </div>
     </div>
-
-
-    <!-- <ng-container *ngFor="let list of filteredData let i=i ndex "> -->
-    <div class="info-data ">
-        <div class="filter-row">
-            <div class="filter-box mr-40 ml-30 filter-one ">
-                <input type="text " placeholder="Filter" name="filter ">
-                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+    <!-- table description -->
+    <ng-container *ngFor="let item of session">
+        <div class="sessions-container-rows">
+            <div class="sessions-checkbox ml-10">
+                <input type="checkbox">
             </div>
-            <div class="filter-box mr-60 filter-two ">
-                <input type="text " placeholder="Filter" name="filter ">
-                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+            <div class="session-id">{{item.sessionid}}</div>
+            <div class="session-title pr-10">{{item.sessiontitle}}</div>
+            <div class="recipient">{{item.recipientcompanies}}</div>
+            <div class="sender">{{item.sender}}</div>
+            <div class="created-on">{{item.createdon}}</div>
+            <div class="status">
+                <div class="status-indicator mr-10"></div>
+                <p>{{item.status}}</p>
             </div>
-            <div class="filter-box ml-40 mr-70 filter-three ">
-                <input type="text " placeholder="Filter" name="filter ">
-                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
-            </div>
-            <div class="filter-box mr-40 ml-40 mr-60  filter-four ">
-                <input type="text " placeholder="Filter" name="filter ">
-                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
-            </div>
-            <div class="filter-box mr-40 ml-40 mr-60  filter-five ">
-                <input type="text " placeholder="Filter" name="filter ">
-                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
-            </div>
-            <div class="filter-box mr-40 filter-six ">
-                <input type="text " placeholder="Filter" name="filter ">
-                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
-            </div>
-            <div class="filter-box mr-40 filter-seven ">
-                <input type="text " placeholder="Filter" name="filter ">
-                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
-            </div>
-            <div class="filter-box mr-40 filter-eight ">
-                <input type="text " placeholder="Filter" name="filter ">
-                <img src=" /assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
-            </div>
+            <div class="job-type">{{item.jobtype}}</div>
+            <div class="originated-session">{{item.originatedsession}}</div>
         </div>
-        <!-- <div class="name ">
-            <input type="checkbox " />
-            <div class="pl-20 font-m ">{{list.name}}</div>
-        </div> -->
-        <!-- <div class="session font-m ml-10 ">
-            <div class="session-count " (click)="getList(i) ">
-                <div>
-                    {{list.sessions}}
-                </div>
-            </div>
-            <div class="sessions-name " *ngIf="showList && i===s electedIndex ">
-                <app-sessions [data]="list "></app-sessions>
-            </div>
-        </div> -->
-        <!-- <div class="summary font-m ">
-            <app-summary [data]="list "></app-summary>
-        </div> -->
-    </div>
-    <!-- </ng-container> -->
+    </ng-container>
+    <!-- Paggination -->
     <ng-container>
         <div class="page-container">
             <div class="pt-5 pb-5 page-content">
@@ -91,10 +94,10 @@
                 </div>
                 <div class="pagination-right font-s mr-30">
                     <div class="pb-5 pt-5">
-                        <img src="/assets/images/icons/skip_first.svg" alt="" class="icons-xs">
+                        <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/skip_first.svg" alt="" class="icons-xs">
                     </div>
                     <div class="pb-5 pt-5">
-                        <img src="/assets/images/icons/skip_previous.svg" alt="" class="icons-xs mr-10 ml-10">
+                        <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/skip_previous.svg" alt="" class="icons-xs mr-10 ml-10">
                     </div>
                     <div class="page-details">
                         <p>Page</p>
@@ -102,15 +105,14 @@
                         <p>of 76</p>
                     </div>
                     <div class="pb-5 pt-5">
-                        <img src="/assets/images/icons/skip_next.svg" alt="" class="icons-xs mr-10 ml-10">
+                        <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/skip_next.svg" alt="" class="icons-xs mr-10 ml-10">
                     </div>
                     <div class="pb-5 pt-5">
-                        <img src="/assets/images/icons/skip_last.svg" alt="" class="icons-xs">
+                        <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/skip_last.svg" alt="" class="icons-xs">
                     </div>
                 </div>
             </div>
 
         </div>
     </ng-container>
-
 </div>

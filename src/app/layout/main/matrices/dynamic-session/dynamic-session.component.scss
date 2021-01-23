@@ -1,0 +1,14 @@
+.dynamic-session-container {
+    width: 100%;
+    .summary-graph {
+        box-shadow: 0px 2px 4px #00000029;
+        .graph-header {
+            height: 40px;
+        }
+        .graph-box {
+            height: 630px;
+            background-color: white;
+            border-radius: 0px 0px 3px 3px;
+        }
+    }
+}

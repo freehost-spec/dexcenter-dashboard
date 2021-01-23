@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ConfigModalComponent } from '../config-modal/config-modal.component';
 import { MatDialog } from '@angular/material/dialog';
 @Component({
@@ -15,10 +15,22 @@ export class QueueComponent implements OnInit {
   loadingData: any;
   filteredData: any;
   searchKey: any;
+  thisElementClicked: boolean = false;
+  elementRef: any;
+
 
   constructor(
     public dialog: MatDialog
   ) { }
+
+  @HostListener('document:mousedown', ['$event'])
+  onGlobalClick(event): void {
+    if (event.target.className.includes('name') || event.target.className.includes('count') || event.target.className.includes('session')) {
+    } else {
+      this.selectedIndex = null;
+      this.showList = false;
+    }
+  }
 
   ngOnInit() {
     this.showList = false;
@@ -26,17 +38,18 @@ export class QueueComponent implements OnInit {
     this.loadingData = false;
     this.queueData = [
       { id: 1, name: 'Queued for Pre-Processing', sessions: 34, summary: '100', status: 'failed' },
-      { id: 2, name: 'Pre-processing', sessions: 34, summary: '90', status: 'in-progress' },
-      { id: 3, name: 'Queued for Processing', sessions: 34, summary: '60', status: 'completed' },
-      { id: 4, name: 'Processing', sessions: 34, summary: '60', status: 'in-progress' },
-      { id: 5, name: 'Post-Processing', sessions: 34, summary: '100', status: 'failed' },
-      { id: 6, name: 'Queue for Batch', sessions: 34, summary: '90', status: 'in-progress' },
-      { id: 7, name: 'Queue for Approval', sessions: 34, summary: '90', status: 'in-progress' },
+      { id: 2, name: 'Pre-processing', sessions: 24, summary: '90', status: 'in-progress' },
+      { id: 3, name: 'Queued for Processing', sessions: 14, summary: '60', status: 'completed' },
+      { id: 4, name: 'Processing', sessions: 30, summary: '60', status: 'in-progress' },
+      { id: 5, name: 'Post-Processing', sessions: 13, summary: '100', status: 'failed' },
+      { id: 6, name: 'Queue for Batch', sessions: 19, summary: '90', status: 'in-progress' },
+      { id: 7, name: 'Queue for Approval', sessions: 104, summary: '90', status: 'in-progress' },
     ];
     this.filteredData = this.queueData;
   }
 
-  openConfig(data) {
+  openConfig() {
+    const data = [];
     const dialogRef = this.dialog.open(ConfigModalComponent, { data });
     dialogRef.afterClosed().subscribe(res => {
       if (res === 'true') {
@@ -58,7 +71,7 @@ export class QueueComponent implements OnInit {
 
   searchData(e) {
     if (e && (e !== undefined || e !== null || e !== '')) {
-      this.filteredData = this.queueData.filter(x => x.name.toLowerCase().includes(e));
+      this.filteredData = this.queueData.filter(x => x.name.toLowerCase().includes(e.toLowerCase()));
     } else {
       this.filteredData = this.queueData;
     }

@@ -1,5 +1,42 @@
 .selected {
-  border: 1px solid #00a1d8;
-  background-color: #00a1d8;
-  color: #fff;
+    border: 1px solid #00a1d8;
+    background-color: #00a1d8;
+    color: #fff;
+}
+
+.recent-activity {
+    display: flex;
+    flex-direction: column;
+    &>.recent-activity-head {
+        padding: 10px 0px !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .recent-activity-head-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .last-update {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &>.recent-activity-content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        &>.tool {
+            width: 260px;
+            display: flex;
+        }
+    }
+}
+
+.tool-icon {
+    transform: rotate(90deg);
+}
+
+.tool-icon-close {
+    transform: rotate(-90deg);
 }

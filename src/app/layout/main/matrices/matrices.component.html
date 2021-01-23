@@ -1,1 +1,35 @@
-<p>matrices works!</p>
+<!-- <div class="chart-wrapper">
+  <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+    [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+  </canvas>
+</div> -->
+<!-- <div class="mb-20 mt-20">
+  <app-chart [type]="'doughnut'" [data]="chart1Data" [options]="options" [canvasWidth]="200" [canvasHeight]="200"
+    [id]="'chashflow-1'"></app-chart>
+</div> -->
+
+<div class="metrics mt-20">
+  <div class="metrics-head cp mb-10" (click)="closeTools()">
+    <img [ngClass]="closeToolSec ? 'tool-icon-close' : 'tool-icon'" class="" src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/close.svg">
+    <span class="pl-10 font-xl fw-500">Metrics</span>
+  </div>
+  <div class="metrics-content" *ngIf="!closeToolSec">
+    <div>
+      <button class="primary-btn" (click)="changeNav('summary')"
+        [ngClass]="activatedTab === 'summary' ? 'selected' : ''">Usage Summary</button>
+      <button class="primary-btn" (click)="changeNav('mtbf')"
+        [ngClass]="activatedTab === 'mtbf' ? 'selected' : ''">MTBF</button>
+      <button class="primary-btn" (click)="changeNav('dynamic-session')"
+        [ngClass]="activatedTab === 'dynamic-session' ? 'selected' : ''">Dynamic Sessions Summary</button>
+    </div>
+    <ng-container *ngIf="activatedTab === 'summary'">
+      <app-summary class="app-summary"></app-summary>
+    </ng-container>
+    <ng-container *ngIf="activatedTab === 'mtbf'">
+      <app-mtbf></app-mtbf>
+    </ng-container>
+    <ng-container *ngIf="activatedTab === 'dynamic-session'">
+      <app-dynamic-session></app-dynamic-session>
+    </ng-container>
+  </div>
+</div>

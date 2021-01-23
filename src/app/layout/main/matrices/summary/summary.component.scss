@@ -1,0 +1,57 @@
+.usage-summary-container {
+    display: flex;
+    width: 100%;
+    flex-flow: wrap;
+    row-gap: 20px;
+    .summary-graph,
+    .sessions-graph,
+    .exchanged-graph,
+    .users-graph {
+        width: 49%;
+        box-shadow: 0px 2px 4px #00000029;
+        .graph-header {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            .date-range {
+                display: flex;
+                align-items: center;
+                input {
+                    width: 130px;
+                    border: 1px solid #CCCCCC;
+                }
+            }
+            .frequency {
+                display: flex;
+                align-items: center;
+                .filter-box {
+                    width: 70px;
+                    input {
+                        border: 1px solid #CCCCCC;
+                    }
+                }
+            }
+        }
+        .graph-box {
+            width: 100%;
+            height: 320px;
+            background-color: white;
+            border-radius: 0px 0px 3px 3px;
+            .usage-summary-data {
+                display: flex;
+                flex-direction: column;
+                .summary-details {
+                    display: flex;
+                    margin-right: 250px;
+                    justify-content: space-between;
+                }
+                .divider {
+                    width: 85%;
+                    hr {
+                        border-top: 1px solid #E7E7EC;
+                    }
+                }
+            }
+        }
+    }
+}

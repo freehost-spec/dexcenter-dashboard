@@ -1,18 +1,28 @@
-<div>
-  <button class="primary-btn" (click)="changeNav('user')"
-    [ngClass]="activatedTab === 'user' ? 'selected' : ''">user</button>
-  <button class="primary-btn" (click)="changeNav('sessions')"
-    [ngClass]="activatedTab === 'sessions' ? 'selected' : ''">session</button>
-  <button class="primary-btn" (click)="changeNav('report')"
-    [ngClass]="activatedTab === 'report' ? 'selected' : ''">report</button>
+<div class="recent-activity">
+    <div class="recent-activity-head cp mb-10" (click)="closeTools()">
+        <div class="recent-activity-head-content">
+            <img [ngClass]="closeToolSec ? 'tool-icon-close' : 'tool-icon'" class="" src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/close.svg">
+            <span class="pl-10 font-xl fw-500">Recent Activity</span>
+        </div>
+        <div class="font-m last-update">
+            <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/update.svg ">
+            <span class="pl-5 ">Last Updated: 12/01/2020 : 15:30</span>
+        </div>
+    </div>
+    <div class="recent-activity-content " *ngIf="!closeToolSec ">
+        <div>
+            <button class="primary-btn " (click)="changeNav( 'user') " [ngClass]="activatedTab==='user' ? 'selected' : '' ">User Activity</button>
+            <button class="primary-btn " (click)="changeNav( 'sessions') " [ngClass]="activatedTab==='sessions' ? 'selected' : '' ">Sessions</button>
+            <button class="primary-btn " (click)="changeNav( 'report') " [ngClass]="activatedTab==='report' ? 'selected' : '' ">Latest Reports</button>
+        </div>
+        <ng-container *ngIf="activatedTab==='user' ">
+            <app-user></app-user>
+        </ng-container>
+        <ng-container *ngIf="activatedTab==='sessions' ">
+            <app-sessions></app-sessions>
+        </ng-container>
+        <ng-container *ngIf="activatedTab==='report' ">
+            <app-reports></app-reports>
+        </ng-container>
+    </div>
 </div>
-
-<ng-container *ngIf="activatedTab === 'user'">
-  <app-user></app-user>
-</ng-container>
-<ng-container *ngIf="activatedTab === 'sessions'">
-  <app-sessions></app-sessions>
-</ng-container>
-<ng-container *ngIf="activatedTab === 'report'">
-  <app-reports></app-reports>
-</ng-container>

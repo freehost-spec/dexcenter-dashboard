@@ -6,19 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  activity: any;
+  userdata: any;
 
   constructor() { }
 
   ngOnInit() {
-    this.activity = [
-      { id: 1, name: 'Queued for Pre-Processing', sessions: 34, summary: '100', status: 'failed' },
-      { id: 2, name: 'Pre-processing', sessions: 34, summary: '90', status: 'in-progress' },
-      { id: 3, name: 'Queued for Processing', sessions: 34, summary: '60', status: 'completed' },
-      { id: 4, name: 'Processing', sessions: 34, summary: '60', status: 'in-progress' },
-      { id: 5, name: 'Post-Processing', sessions: 34, summary: '100', status: 'failed' },
-      { id: 6, name: 'Queue for Batch', sessions: 34, summary: '90', status: 'in-progress' },
-      { id: 7, name: 'Queue for Approval', sessions: 34, summary: '90', status: 'in-progress' },
+    this.userdata = [
+      { id: 1, activity: 'Work flow restart dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt', updatedon:'04/30/20,00:12:22 EDT', updatedby: 'Admin' },
+      { id: 2, activity: 'Task stop sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt', updatedon: '04/30/20,00:12:22 EDT', updatedby: 'Admin' },
+      { id: 3, activity: 'QAdmin 4 Users Active dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt', updatedon: '04/30/20,00:12:22 EDT', updatedby: 'Admin'},
+      { id: 4, activity: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt', updatedon: '04/30/20,00:12:22 EDT', updatedby: 'Admin'},
+      { id: 5, activity: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt', updatedon: '04/30/20,00:12:22 EDT', updatedby: 'Admin'},
     ];
   }
 }

@@ -1,1 +1,22 @@
-<p>mtbf works!</p>
+<div class="mtbf-container mt-20">
+  <div class="mtbf-graph">
+    <div class="graph-header">
+      <div class="graph-title font-l">Sessions By Date</div>
+      <div class="date-range ml-50 mr-30">
+        <input type="date" class="pt-2 pl-5 pb-2" value="2020-01-01">
+        <p class="ml-5 mr-5 font-m">to</p>
+        <input type="date" class="pt-2 pl-5 pb-2 " value="2020-08-01">
+      </div>
+      <div class="frequency font-m ">
+        <p>Frequency:</p>
+        <div class="filter-box ">
+          <input type="text " placeholder="- " name="filter ">
+          <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+        </div>
+      </div>
+    </div>
+    <div class="graph-box">
+      <app-chart [id]="'session'" [canvasWidth]="1000" [canvasHeight]="500"></app-chart>
+    </div>
+  </div>
+</div>

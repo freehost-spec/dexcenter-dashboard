@@ -4,8 +4,22 @@
       <div class="triangle-left"></div>
       <div class="session-item">
         <ng-container *ngFor="let list of [].constructor(data.sessions) let i = index">
-          <div class="item-name p-10">
-            Session {{i + 1}}
+          <div class="item-name name p-10 cp" (click)="showWorkFlow(i)">
+            Session {{i + 1}} <span *ngIf="i === 1 || i === 2" class="pl-10 name">></span>
+          </div>
+          <div class="workflow-container">
+            <ng-container *ngIf="workFlow && i === selectedIndex">
+              <div class="session-list">
+                <div class="triangle-left"></div>
+                <div class="session-item">
+                  <ng-container *ngFor="let list of [].constructor(data.sessions) let i = index">
+                    <div class="item-name p-10">
+                      Workflow {{i + 1}} - Task
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </ng-container>
           </div>
         </ng-container>
       </div>

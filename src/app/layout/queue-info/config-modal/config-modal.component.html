@@ -2,7 +2,7 @@
   <div class="modal-container">
     <div class="modal-header">
       <p class="ml-20 font-l">Change Configuration</p>
-      <img src="/assets/images/icons/icon-close.svg" class="icons-xs mr-30 cp" (click)="closeModal(configData)"
+      <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/icon-close.svg" class="icons-xs mr-30 cp" (click)="closeModal(configData)"
         alt=" close ">
     </div>
     <div class="info-container p-20">
@@ -16,11 +16,11 @@
           </div>
           <div class="session font-m font-bold" (click)="editJobs()">
             Max job
-            <img src="/assets/images/icons/edit-black.svg" class="icons-s ml-5" alt=" profile ">
+            <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/edit-black.svg" class="icons-s ml-5" alt=" profile ">
           </div>
           <div class="session font-m font-bold" (click)="editThread()">
             Max Thread
-            <img src="/assets/images/icons/edit-black.svg" class="icons-s ml-5" alt=" profile ">
+            <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/edit-black.svg" class="icons-s ml-5" alt=" profile ">
           </div>
         </div>
       </div>
@@ -30,13 +30,15 @@
             {{list.name}}
           </div>
           <div class="session font-m ml-5">
-            <input *ngIf="jobEdit" class="p-5" [(ngModel)]="list.max_job" />
+            <input *ngIf="jobEdit" class="p-5" type="number" onkeypress="return event.charCode >= 48" min="1"
+              [(ngModel)]="list.max_job" />
             <div *ngIf="!jobEdit">
               {{list.max_job}}
             </div>
           </div>
           <div class="session font-m ml-5">
-            <input *ngIf="threadEdit" class="p-5" [(ngModel)]="list.max_thread" />
+            <input *ngIf="threadEdit" class="p-5" type="number" onkeypress="return event.charCode >= 48" min="1"
+              [(ngModel)]="list.max_thread" />
             <div *ngIf="!threadEdit">
               {{list.max_thread}}
             </div>
@@ -55,11 +57,11 @@
   <div class="confirmation">
     <div class="confirmation-header">
       <div class="confirmation-header-left">
-        <img src="/assets/images/icons/info-red.svg" class="icons-s ml-15 mr-5 cp" (click)="closeModal('true')"
+        <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/info-red.svg" class="icons-s ml-15 mr-5 cp" (click)="closeModal('true')"
           alt=" alert ">
         <p>Restart</p>
       </div>
-      <img src="/assets/images/icons/icon-close.svg" class="icons-xs mr-15 cp" (click)="closeModal('true')"
+      <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/icon-close.svg" class="icons-xs mr-15 cp" (click)="closeModal('true')"
         alt=" close ">
     </div>
     <p class="confirmation-message pt-30 pb-10">Do you want to restart the

@@ -1,1 +1,56 @@
-<p>summary works!</p>
+<div class="usage-summary-container mt-20">
+  <div class="summary-graph mr-20 ml-2">
+    <div class="graph-header">
+      <div class="graph-title font-l">Usage summary</div>
+      <div class="date-range ml-50 mr-30">
+        <input type="date" class="pt-2 pl-5 pb-2" value="2020-01-01">
+        <p class="ml-5 mr-5 font-m">to</p>
+        <input type="date" class="pt-2 pl-5 pb-2 " value="2020-08-01">
+      </div>
+      <div class="frequency font-m ">
+        <p class="mr-5">Frequency:</p>
+        <div class="filter-box ">
+          <input type="text " placeholder="- " name="filter ">
+          <img src=" https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/arrow_drop_down-24px.svg " alt=" " class="icons-xs ">
+        </div>
+      </div>
+    </div>
+    <div class="graph-box pt-20">
+      <ng-container *ngFor="let item of usagesummary">
+        <div class="usage-summary-data pt-20">
+          <div class="summary-details mb-5 ml-50">
+            <div class="font-m">{{item.name}}</div>
+            <div class="fw-500 font-m ">{{item.value}}</div>
+          </div>
+          <div class="ml-50 divider ">
+            <hr>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="sessions-graph ">
+    <div class="graph-header ">
+      <div class="graph-title font-l ">Number of Sessions</div>
+    </div>
+    <div class="graph-box ">
+      <app-chart [id]="'session'" [canvasWidth]="500" [canvasHeight]="300"></app-chart>
+    </div>
+  </div>
+  <div class="exchanged-graph mr-25 ">
+    <div class="graph-header ">
+      <div class="graph-title font-l ">Number of File Exchanged</div>
+    </div>
+    <div class="graph-box ">
+      <app-chart [id]="'exchange'" [canvasWidth]="500" [canvasHeight]="300"></app-chart>
+    </div>
+  </div>
+  <div class="users-graph ">
+    <div class="graph-header ">
+      <div class="graph-title font-l ">Number of Users</div>
+    </div>
+    <div class="graph-box ">
+      <app-chart [id]="'users'" [canvasWidth]="500" [canvasHeight]="300"></app-chart>
+    </div>
+  </div>
+</div>

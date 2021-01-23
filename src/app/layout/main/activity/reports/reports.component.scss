@@ -1,0 +1,120 @@
+// commom coloum width
+@mixin table-col1 {
+    width: 60%;
+}
+
+@mixin table-col2 {
+    width: 18%;
+}
+
+@mixin table-col3 {
+    width: 15%;
+}
+
+.user-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // table-rows and header
+    .user-container-rows {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #dfe2ee;
+        border-radius: 4px 4px 0px 0px;
+        border: none;
+        .user-activity {
+            @include table-col1;
+        }
+        .user-updated-on {
+            @include table-col2;
+        }
+        .user-updated-by {
+            @include table-col3;
+        }
+    }
+    // filter row
+    .filter {
+        width: 100%;
+        background-color: white;
+        display: flex;
+        height: 50px;
+        align-items: center;
+        border: 1px solid #E7E7EC;
+        .filter-activity {
+            @include table-col1;
+            .filter-box {
+                width: 25%;
+            }
+        }
+        .filter-updateon {
+            @include table-col2;
+            .filter-box {
+                width: 40%;
+            }
+        }
+        .filter-updatedby {
+            @include table-col3;
+            .filter-box {
+                width: 30%;
+            }
+        }
+    }
+    //  table description
+    .user-rows {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        .user-td {
+            width: 100%;
+            height: 45px;
+            border-radius: 0px;
+            background-color: white;
+        }
+        .divider {
+            width: 93%;
+            hr {
+                border-top: 1px solid #E7E7EC;
+            }
+        }
+    }
+    // pagination
+    .page-container {
+        background-color: #dfe2ee !important;
+        border: 1px solid #c1c3c9;
+        border-radius: 0px 0px 4px 4px;
+        .page-content {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            align-items: center;
+            color: #333333;
+            &>.pagination-left {
+                width: 30%;
+            }
+            &>.pagination-right {
+                width: 22%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                .page-details {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center !important;
+                    align-items: center;
+                    .page-number {
+                        color: #333333;
+                        border: 1px solid #c1c3c9;
+                    }
+                    .page-number:focus {
+                        outline-style: none;
+                        color: #333333;
+                    }
+                }
+            }
+        }
+    }
+}

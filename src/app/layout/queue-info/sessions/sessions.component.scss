@@ -1,4 +1,6 @@
 .session-container {
+  position: relative;
+
   & > .session-list {
     display: flex;
     & > .triangle-left {
@@ -14,7 +16,38 @@
       background-color: #333333;
       color: #fff;
       height: 200px;
-      width: 150px;
+      width: 120px;
+      overflow: hidden;
+      overflow-y: scroll;
+      & > .item-name {
+        cursor: pointer;
+      }
+      & > .item-name:hover {
+        background-color: #666;
+      }
+    }
+  }
+}
+
+.workflow-container {
+  position: absolute;
+  left: 130px;
+  & > .session-list {
+    display: flex;
+    & > .triangle-left {
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-right: 12px solid #333333;
+      border-bottom: 8px solid transparent;
+      position: relative;
+      top: 5px;
+    }
+    & > .session-item {
+      background-color: #333333;
+      color: #fff;
+      height: 200px;
+      width: 140px;
       overflow: hidden;
       overflow-y: scroll;
       & > .item-name {

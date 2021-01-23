@@ -1,149 +1,193 @@
-.info-container {
-    .info-data {
-        display: flex;
-        justify-content: space-between;
-        background: #ffffff 0% 0% no-repeat padding-box;
-        border: 1px solid #c1c3c9;
-        padding: 4px 20px;
-        &>.name {
-            width: 10%;
-            display: flex;
-            justify-content: left;
-            align-items: center !important;
-        }
-        &>.session {
-            width: 20%;
-            text-align: left !important;
-            display: flex;
-            align-items: center;
-            position: relative;
-            &>.session-count {
-                display: flex;
-                text-align: left;
-                background-color: #35aff8;
-                padding: 5px;
-                align-items: center;
-                justify-content: center;
-                width: 50px;
-                color: #fff;
-                border-radius: 3px;
-                cursor: pointer;
-            }
-            &>.sessions-name {
-                position: absolute;
-                left: 50px;
-                top: 0px;
-                display: flex;
-            }
-        }
-        &>.recipient {
-            width: 12%;
-        }
-        &>.sender {
-            width: 5%;
-        }
-        &>.created_on {
-            width: 10%;
-        }
-        &>.status {
-            width: 10%;
-        }
-        &>.job-type {
-            width: 10%;
-        }
-        &>.originated-session {
-            width: 12%;
-        }
-        .filter-row {
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            .filter-box {
-                display: flex;
-                position: relative;
-                &>input {
-                    width: 100%;
-                    padding: 5px 8px;
-                    border: 1px solid #e3e5ea;
-                }
-                &>img {
-                    position: absolute;
-                    right: 5px;
-                    top: 5px;
-                }
-            }
-            .filter-one {
-                width: 10%;
-            }
-            .filter-two {
-                width: 20%;
-            }
-            .filter-three {
-                width: 12%;
-            }
-            .filter-four {
-                width: 5%;
-            }
-            .filter-five {
-                width: 10%;
-            }
-            .filter-six {
-                width: 10%;
-            }
-            .filter-seven {
-                width: 10%;
-            }
-            .filter-eight {
-                width: 12%;
-            }
-        }
-    }
-    .head {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-        padding-top: 12px !important;
-        padding-bottom: 12px !important;
-        background-color: #dfe2ee !important;
-        border-radius: 4px 4px 0px 0px;
-        border: none;
-    }
-}
-
-.page-container {
-    background-color: #dfe2ee !important;
-    border: 1px solid #c1c3c9;
-    border-radius: 0px 0px 4px 4px;
-    .page-content {
-        display: flex;
-        justify-content: space-between;
-        text-align: left;
-        align-items: center;
-        color: #333333;
-        &>.pagination-left {
-            width: 30%;
-        }
-        &>.pagination-right {
-            width: 22%;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-end;
-            align-items: center;
-            .page-details {
-                display: flex;
-                flex-direction: row;
-                justify-content: center !important;
-                align-items: center;
-                .page-number {
-                    color: #333333;
-                    border: 1px solid #c1c3c9;
-                }
-                .page-number:focus {
-                    outline-style: none;
-                    color: #333333;
-                }
-            }
-        }
-    }
-}
+     // commom coloum width
+     @mixin table-col1 {
+         width: 2%;
+     }
+     
+     @mixin table-col2 {
+         width: 10%;
+     }
+     
+     @mixin table-col3 {
+         width: 17%;
+     }
+     
+     @mixin table-col4 {
+         width: 13%;
+     }
+     
+     @mixin table-col5 {
+         width: 6%;
+     }
+     
+     @mixin table-col6 {
+         width: 15%;
+     }
+     
+     @mixin table-col7 {
+         width: 9%;
+     }
+     
+     @mixin table-col8 {
+         width: 13%;
+     }
+     
+     @mixin table-col9 {
+         width: 12%;
+     }
+     
+     .sessions-container {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         // header and table descriptions
+         .sessions-container-rows {
+             display: flex;
+             align-items: center;
+             text-align: left;
+             padding-top: 12px;
+             padding-bottom: 12px;
+             background-color: #dfe2ee;
+             border-radius: 4px 4px 0px 0px;
+             border: none;
+             .sessions-checkbox {
+                 @include table-col1;
+             }
+             .session-id {
+                 @include table-col2;
+             }
+             .session-title {
+                 @include table-col3;
+                 font-size: 13px;
+             }
+             .recipient {
+                 @include table-col4;
+             }
+             .sender {
+                 @include table-col5;
+             }
+             .created-on {
+                 @include table-col6;
+             }
+             .status {
+                 @include table-col7;
+                 display: flex;
+                 align-items: center;
+                 .status-indicator {
+                     width: 10px;
+                     height: 10px;
+                     border-radius: 50%;
+                     background-color: green;
+                     border-style: none;
+                 }
+             }
+             .job-type {
+                 @include table-col8;
+             }
+             .originated-session {
+                 @include table-col9;
+             }
+         }
+         .sessions-container-rows:nth-child(even) {
+             background-color: #E7EEF4;
+         }
+         .sessions-container-rows:nth-child(odd) {
+             background-color: white;
+         }
+         // filter row
+         .filter {
+             width: 100%;
+             background-color: white;
+             border: 1px solid #E7E7EC;
+             display: flex;
+             height: 50px;
+             align-items: center;
+             .sessions-checkbox {
+                 @include table-col1;
+             }
+             .session-id {
+                 @include table-col2;
+                 .filter-box {
+                     width: 70%;
+                 }
+             }
+             .session-title {
+                 @include table-col3;
+                 .filter-box {
+                     width: 80%;
+                 }
+             }
+             .recipient {
+                 @include table-col4;
+                 .filter-box {
+                     width: 80%;
+                 }
+             }
+             .sender {
+                 @include table-col5;
+                 .filter-box {
+                     width: 85%;
+                 }
+             }
+             .created-on {
+                 @include table-col6;
+                 .filter-box {
+                     width: 80%;
+                 }
+             }
+             .status {
+                 @include table-col7;
+                 .filter-box {
+                     width: 60%;
+                 }
+             }
+             .job-type {
+                 @include table-col8;
+                 .filter-box {
+                     width: 70%;
+                 }
+             }
+             .originated-session {
+                 @include table-col9;
+                 .filter-box {
+                     width: 60%;
+                 }
+             }
+         }
+         // pagination
+         .page-container {
+             background-color: #dfe2ee !important;
+             border: 1px solid #c1c3c9;
+             border-radius: 0px 0px 4px 4px;
+             .page-content {
+                 display: flex;
+                 justify-content: space-between;
+                 text-align: left;
+                 align-items: center;
+                 color: #333333;
+                 &>.pagination-left {
+                     width: 30%;
+                 }
+                 &>.pagination-right {
+                     width: 22%;
+                     display: flex;
+                     flex-direction: row;
+                     justify-content: flex-end;
+                     align-items: center;
+                     .page-details {
+                         display: flex;
+                         flex-direction: row;
+                         justify-content: center !important;
+                         align-items: center;
+                         .page-number {
+                             color: #333333;
+                             border: 1px solid #c1c3c9;
+                         }
+                         .page-number:focus {
+                             outline-style: none;
+                             color: #333333;
+                         }
+                     }
+                 }
+             }
+         }
+     }

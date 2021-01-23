@@ -1,0 +1,38 @@
+.selected {
+    border: 1px solid #00a1d8;
+    background-color: #00a1d8;
+    color: #fff;
+}
+
+.metrics {
+    display: flex;
+    flex-direction: column;
+    &>.metrics-head {
+        padding: 10px 0px !important;
+        display: flex;
+        align-items: center;
+    }
+    &>.metrics-content {
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        // align-items: center;
+        width: 100%;
+        .app-summary {
+            width: 100%;
+        }
+        &>.tool {
+            width: 260px;
+            display: flex;
+        }
+    }
+}
+
+.tool-icon {
+    transform: rotate(90deg);
+}
+
+.tool-icon-close {
+    transform: rotate(-90deg);
+}

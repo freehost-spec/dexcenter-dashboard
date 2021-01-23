@@ -4,12 +4,12 @@
     <div class="search-box mr-10">
       <input type="text" placeholder="Search.." name="search" [(ngModel)]="searchKey"
         (ngModelChange)="searchData(searchKey)">
-      <img src="/assets/images/icons/icon-search.svg" alt="Home" class="icons-xs">
+      <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/icon-search.svg" alt="Home" class="icons-xs">
     </div>
     <div class="settings">
       <div class="job-setting font-m">
         <div class="count pl-10 pr-10">
-          {{configData ? configData.max_job: '12'}}
+          {{configData ? configData.max_job: '10'}}
         </div>
         <div class="text pl-10 pr-10">
           Max Job
@@ -17,14 +17,14 @@
       </div>
       <div class="thread-setting font-m ml-10 mr-20">
         <div class="count pl-10 pr-10">
-          {{configData ? configData.max_thread: '12'}}
+          {{configData ? configData.max_thread: '10'}}
         </div>
         <div class="text pl-10 pr-10">
           Max Thread
         </div>
       </div>
-      <button class="primary-btn conf-button font-m" (click)="openConfig(configData)">
-        <img src="/assets/images/icons/settings-24px.svg" alt="" class="pr-10">Change Configuration
+      <button class="primary-btn conf-button font-m" (click)="openConfig()">
+        <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/settings-24px.svg" alt="" class="pr-10">Change Configuration
       </button>
     </div>
   </div>
@@ -47,9 +47,9 @@
           <input type="checkbox" />
           <div class="pl-20 font-m">{{list.name}}</div>
         </div>
-        <div class="session font-m ml-10">
+        <div id="s-name" class="session font-m ml-10">
           <div class="session-count" (click)="getList(i)">
-            <div>
+            <div class="count">
               {{list.sessions}}
             </div>
           </div>
@@ -70,10 +70,10 @@
           </div>
           <div class="pagination-right font-s mr-30">
             <div class="pb-5 pt-5">
-              <img src="/assets/images/icons/skip_first.svg" alt="" class="icons-xs">
+              <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/skip_first.svg" alt="" class="icons-xs">
             </div>
             <div class="pb-5 pt-5">
-              <img src="/assets/images/icons/skip_previous.svg" alt="" class="icons-xs mr-10 ml-10">
+              <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/skip_previous.svg" alt="" class="icons-xs mr-10 ml-10">
             </div>
             <div class="page-details">
               <p>Page</p>
@@ -81,10 +81,10 @@
               <p>of 76</p>
             </div>
             <div class="pb-5 pt-5">
-              <img src="/assets/images/icons/skip_next.svg" alt="" class="icons-xs mr-10 ml-10">
+              <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/skip_next.svg" alt="" class="icons-xs mr-10 ml-10">
             </div>
             <div class="pb-5 pt-5">
-              <img src="/assets/images/icons/skip_last.svg" alt="" class="icons-xs">
+              <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/skip_last.svg" alt="" class="icons-xs">
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
 </div>
 <ng-container *ngIf="loadingData">
   <div class="loading">
-    <img src="/assets/images/icons/Loader.svg" alt="Loading" class="icons-2xl">
+    <img src="https://freehost-spec.github.io/dexcenter-dashboard/assets/images/icons/Loader.svg" alt="Loading" class="icons-2xl">
     <div class="pt-20px loading-message font-2xl mt-20">
       <p class="font-2xl"> Please wait,</p>
       <p class="font-2xl">JBoss is restarting...</p>
