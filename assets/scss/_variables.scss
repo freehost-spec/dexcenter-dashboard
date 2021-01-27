@@ -7,8 +7,10 @@ $DARKGREY: #333333;
 $LIGHTGREY: #929292;
 $LIGHTFREEN: #a5cf4d;
 $WHITE: #ffffff;
+// background color
 $background-color: $BACKGROUND;
 $background-white-color: $WHITE;
+// font-color
 $blue-color: $BLUE;
 $s-blue-color: $SKYBLUE;
 $d-blue-color: $DARKBLUE;
@@ -16,6 +18,7 @@ $black-color: $BLACK;
 $dark-grey-color: $DARKGREY;
 $light-grey-color: $LIGHTGREY;
 $light-green-color: $LIGHTFREEN;
+$white:$WHITE;
 //font-weight
 $font-light: 300;
 $font-medium: 500;
@@ -24,6 +27,7 @@ $fw-500: 700;
 $font-xxs: 8px;
 $font-xs: 10px;
 $font-s: 12px;
+$font-sm:13px;
 $font-m: 14px;
 $font-l: 16px;
 $font-xl: 18px;
