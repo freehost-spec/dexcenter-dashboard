@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="514.795" height="59.407" viewBox="0 0 514.795 59.407">
+  <g id="fwrd-z-arrow" transform="translate(575.791 -6885.5) rotate(90)">
+    <path id="Path_414" data-name="Path 414" d="M0,0H26" transform="translate(6918.5 568.5)" fill="none" stroke="#101010" stroke-width="1"/>
+    <line id="Line_3" data-name="Line 3" x2="5" y2="7" transform="translate(6939.5 561.5)" fill="none" stroke="#101010" stroke-width="1"/>
+    <line id="Line_4" data-name="Line 4" y1="7" x2="5" transform="translate(6939.5 568.5)" fill="none" stroke="#101010" stroke-width="1"/>
+    <line id="Line_5" data-name="Line 5" transform="translate(6944.5 568.5)" fill="none" stroke="#707070" stroke-width="1"/>
+    <path id="Path_415" data-name="Path 415" d="M0,0H508" transform="translate(6918.5 61) rotate(90)" fill="none" stroke="#101010" stroke-width="1"/>
+    <path id="Path_416" data-name="Path 416" d="M0,0H33" transform="translate(6885.5 61.496)" fill="none" stroke="#101010" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="51.407" height="14.581" viewBox="0 0 51.407 14.581">
+  <g id="fwrd-arrow-s" transform="translate(-6866.5 -561.209)">
+    <path id="Path_414" data-name="Path 414" d="M0,0H51" transform="translate(6866.5 568.5)" fill="none" stroke="#101010" stroke-width="1"/>
+    <line id="Line_3" data-name="Line 3" x2="5" y2="7" transform="translate(6912.5 561.5)" fill="none" stroke="#101010" stroke-width="1"/>
+    <line id="Line_4" data-name="Line 4" y1="7" x2="5" transform="translate(6912.5 568.5)" fill="none" stroke="#101010" stroke-width="1"/>
+    <line id="Line_5" data-name="Line 5" transform="translate(6917.5 568.5)" fill="none" stroke="#707070" stroke-width="1"/>
+  </g>
+</svg>
