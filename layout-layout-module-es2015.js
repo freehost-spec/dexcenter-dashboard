@@ -8396,6 +8396,12 @@ let HeaderComponent = class HeaderComponent {
                 if (s.urlAfterRedirects.includes('queue-info')) {
                     this.activeUrl = 'Queue Information';
                 }
+                else if (s.urlAfterRedirects.includes('system-connection')) {
+                    this.activeUrl = 'Systems Connection';
+                }
+                else if (s.urlAfterRedirects.includes('workflow')) {
+                    this.activeUrl = 'Workflow';
+                }
                 else {
                     this.activeUrl = null;
                 }

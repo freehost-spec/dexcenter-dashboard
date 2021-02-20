@@ -12064,6 +12064,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (s instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"]) {
             if (s.urlAfterRedirects.includes('queue-info')) {
               _this41.activeUrl = 'Queue Information';
+            } else if (s.urlAfterRedirects.includes('system-connection')) {
+              _this41.activeUrl = 'Systems Connection';
+            } else if (s.urlAfterRedirects.includes('workflow')) {
+              _this41.activeUrl = 'Workflow';
             } else {
               _this41.activeUrl = null;
             }
